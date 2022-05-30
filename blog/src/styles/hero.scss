@@ -1,0 +1,28 @@
+.h-items{
+    display: flex;
+    padding: 50px;
+    width: 100%;
+    align-items: center;
+    img{
+        height: 65vh;
+        border-radius: 10px;
+    }
+    .desc{
+        width: 45%;
+        margin-left: 5%;
+        letter-spacing: 1px;
+        line-height: 20px;
+        color: gray;
+        font-size: small;
+        &::first-letter{
+            color: #db9957;
+            background-color: #ffff;
+            font-size: 36px;
+            border-color: #ffff;
+            padding: 3px;
+            margin-right: 3px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+    }
+}

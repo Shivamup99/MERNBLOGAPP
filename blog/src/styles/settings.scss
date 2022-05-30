@@ -1,0 +1,81 @@
+.settings{
+    display: flex;
+    .setting-container{
+        flex: 9;
+        padding: 20px;
+        .setting-title{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .update-title{
+                font-size: 30px;
+                margin-bottom: 20px;
+                color: lightcoral;
+            }
+            .delete-title{
+                color: crimson;
+                font-size: 14px;
+                cursor: pointer;
+            }
+        }
+        .setting-form{
+            display: flex;
+            flex-direction: column;
+            .setting-pp{
+                display: flex;
+                align-items: center;
+                margin: 10px 0px;
+                .pp-img{
+                    height: 80px;
+                    width: 80px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                .file-icon{
+                    color: gray;
+                    margin-left: 20px;
+                    cursor: pointer;
+                    padding: 4px;
+                    width: 34px;
+                    height: 34px;
+                    border-radius: 50%;
+                    background-color: lightcoral;
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            label{
+                font-size: 20px;
+                letter-spacing: .4px;
+                margin-top: 20px;
+            }
+            input{
+                color: gray;
+                margin: 10px 0px;
+                height: 30px;
+                border: none;
+                letter-spacing: .5px;
+                border-bottom: 1px solid lightgray;
+            }
+            .set-btn{
+                width: 150px;
+                align-self: center;
+                border: none;
+                border-radius: 6px;
+                color: white;
+                background-color: teal;
+                cursor: pointer;
+                padding: 10px;
+                margin-top: 20px;
+                letter-spacing: .6px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+        }
+    }
+    .setting-wrap{
+        flex: 3;
+    }
+}

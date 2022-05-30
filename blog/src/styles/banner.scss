@@ -1,0 +1,33 @@
+.t-blog{
+    padding: 20px;
+    color: gray;
+    font-size: 20px;
+    letter-spacing: .7px;
+}
+.banner{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 10px;
+    // z-index: -1;
+    img{
+        height: 250px;
+        width: 96% !important;
+    }
+}
+
+.slick-prev {
+    left: 3% !important;
+    z-index: 1;
+  }
+  .slick-prev:before {
+    font-size: 40px;
+    color: rgba($color: #000000, $alpha: 1.0);
+  }
+  .slick-next:before {
+    font-size: 40px;
+    color: rgba($color: #000000, $alpha: 1.0);
+  }
+  .slick-next {
+    right: 5% !important;
+    z-index: 1;
+  }

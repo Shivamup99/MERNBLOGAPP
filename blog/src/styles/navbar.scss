@@ -1,0 +1,104 @@
+.navbar{
+    height: 70px;
+    width: 100%;
+    position: sticky;
+    top:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    h1{
+        cursor: pointer;
+        padding: 20px;
+        color: #888;
+        font-size: 36px;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+    .center{
+        display: flex;
+        .cText{
+            display: flex;
+            align-items: center;
+            .MuiSvgIcon-root{
+                font-size: 22px;
+                color: #888;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+            span{
+                margin-right: 20px;
+                font-size: 16px;
+                font-weight: 300;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+                color: #888;
+                cursor: pointer;
+            }
+            &:hover{
+                color:#4267b3;
+            }
+        }
+    }
+    .left{
+        display: flex;
+        align-items: center;
+        .inputBox{
+            display: flex;
+            align-items: center;
+            input{
+                padding: 5px;
+                margin-right: 10px;
+                width: 230px;
+                outline: none;
+                border: none;
+                border-bottom: 1px solid gray;
+                font-size: 14px;
+                letter-spacing: 1px;
+                color: #888;
+            }
+            .s-icon{
+                margin-left: -37px;
+                color: #888;
+            }
+        }
+        .a-icon{
+            margin-right: 20px;
+            margin-left: 30px;
+            cursor: pointer;
+        }
+        .auth{
+            display: flex;
+            align-items: center;
+            .auth-Text{
+                display: flex;
+                align-items: center;
+                .MuiSvgIcon-root{
+                    font-size: 22px;
+                    color: #888;
+                    margin-right: 5px;
+                    cursor: pointer;
+                }
+                span{
+                margin-right: 20px;
+                font-size: 16px;
+                font-weight: 300;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+                color: #888;
+                cursor: pointer;  
+                }
+            }
+        }
+    }
+}
+.scrroled{
+    background-color: #222;
+    color: #999;
+}
+.inputBox.scrroled{
+    background-color: transparent;
+    input{
+        background-color: transparent;
+    }
+}
