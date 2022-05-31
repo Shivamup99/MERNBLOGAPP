@@ -1,5 +1,6 @@
 import { DriveFolderUploadOutlined } from '@mui/icons-material'
 import React from 'react'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import '../styles/write.scss'
 const Write = () => {
@@ -25,6 +26,7 @@ const Write = () => {
               <button className='w-submit'>Publish</button>
           </form>
       </div>
+      <Footer/>
       </>
   )
 }
