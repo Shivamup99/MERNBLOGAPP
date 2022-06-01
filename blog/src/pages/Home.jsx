@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import Hero from '../components/Hero'
@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'
 import Posts from '../components/Posts'
 import Sidebar from '../components/Sidebar'
 import '../styles/home.scss'
+
 const Home = () => {
   return (
     <div className='home'>

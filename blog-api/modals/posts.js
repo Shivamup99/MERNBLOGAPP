@@ -18,8 +18,7 @@ const createPostSchema = new mongoose.Schema({
         required:true
     },
     photo:{
-        type:String,
-        required:false
+        type:String
     }
 },{timestamps:true})
 

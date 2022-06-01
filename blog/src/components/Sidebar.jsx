@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/sidebar.scss'
 import {FacebookOutlined, GitHub, Instagram, LinkedIn} from '@mui/icons-material'
+import {useDispatch,useSelector} from 'react-redux'
+import { selectedCategory } from '../feature/categorySlice'
+import { fetchCategory } from '../feature/categoryAction'
+
 const Sidebar = () => {
+  const dispatch = useDispatch()
+  const {category,isFetching} = useSelector(selectedCategory)
+  useEffect(()=>{
+    fetchCategory(dispatch)
+  },[dispatch])
   return (
     <div className='sidebar'>
         <div className="sidebar-item">
@@ -14,12 +23,13 @@ const Sidebar = () => {
         <div className="sidebar-item">
             <span className="sTitle">Categories</span>
             <ul className="sList">
-                <li className="sListItem">Life</li>
-                <li className="sListItem">Music</li>
-                <li className="sListItem">Sport</li>
-                <li className="sListItem">Style</li>
-                <li className="sListItem">Technology</li>
-                <li className="sListItem">News</li>
+              {isFetching ? <span>Loading category</span> : (
+                <>
+                 {category && category.map((item,i)=>
+                  <li className="sListItem" key={i}>{item.name}</li>
+                 )}
+                </>
+              )}
             </ul>
         </div>
         <div className="sidebar-item">
