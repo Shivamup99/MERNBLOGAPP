@@ -4,13 +4,19 @@ import Post from './Post'
 import {useDispatch,useSelector} from 'react-redux'
 import { selectedPosts } from '../feature/postSlice'
 import { fetchPost } from '../feature/postAction'
+import { useLocation } from 'react-router-dom'
 const Posts = () => {
   const dispatch = useDispatch()
+  const {search} = useLocation()
   const {posts ,isFetching} = useSelector(selectedPosts)
   useEffect(()=>{
     fetchPost(dispatch)
   },[dispatch])
-  console.log(posts)
+
+  useEffect(()=>{
+    fetchPost(dispatch,search)
+  },[dispatch])
+ // console.log(posts)
   return (
     <div className="posts">
       {

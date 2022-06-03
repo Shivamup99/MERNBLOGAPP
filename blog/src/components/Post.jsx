@@ -2,9 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/posts.scss'
 const Post = ({post}) => {
+  const PF = 'http://localhost:5000/'
   return (
     <div className='post'>
-        <img src="https://images.unsplash.com/photo-1453728013993-6d66e9c9123a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Zm9jdXN8ZW58MHx8MHx8&w=1000&q=80" alt="sddhudh" />
+      {post.photo && (
+        <img src={PF+post.photo} alt="sddhudh" />
+      )}
+       
         <div className="post-info">
             <div className="post-cats">
               {post?.categories && post.categories.map((item,i)=>(

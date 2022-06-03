@@ -2,7 +2,14 @@ import Posts from '../modals/posts.js'
 
 export const addPosts = async(req,res)=>{
     try {
-    const post = new Posts(req.body)
+    let photo = req.file.path
+    const post = new Posts({
+        title:req.body.title,
+        desc:req.body.desc,
+        categories:req.body.categories,
+        username:req.body.username
+    })
+    post.photo = photo
     const addPost = await post.save()
     res.status(201).json(addPost)
     } catch (error) {

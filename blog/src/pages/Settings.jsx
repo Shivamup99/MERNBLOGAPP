@@ -4,7 +4,9 @@ import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import { DriveFolderUploadOutlined } from '@mui/icons-material'
 import Footer from '../components/Footer'
+import { useSelector } from 'react-redux'
 const Settings = () => {
+    const {user} = useSelector(state=>state.auth)
   return (
       <>
       <Navbar/>
@@ -25,9 +27,9 @@ const Settings = () => {
              <input type='file' id='fileInput' style={{display:'none'}}/>
             </div> 
             <label>Username</label>
-            <input type="text" placeholder='Shivam Upadhyay'/>
+            <input type="text" placeholder={user.name}/>
             <label>Email</label>
-            <input type="email" placeholder='shivam@gmail.com'/>
+            <input type="email" placeholder={user.email}/>
             <label>Password</label>
             <input type="password" placeholder='Password'/>
             <button className='set-btn'>Update</button>

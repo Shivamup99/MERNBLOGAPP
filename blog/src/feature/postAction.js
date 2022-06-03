@@ -1,10 +1,10 @@
 import axios from "axios"
 import { processFailed, processStart, processSuccess } from "./postSlice"
 
-export const fetchPost =async(dispatch)=>{
+export const fetchPost =async(dispatch,search)=>{
     dispatch(processStart())
     try {
-        const res = await axios.get('http://localhost:5000/api/posts')
+        const res = await axios.get('http://localhost:5000/api/posts'+search)
         dispatch(processSuccess(res.data))
     } catch (error) {
         dispatch(processFailed())

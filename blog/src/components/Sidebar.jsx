@@ -4,7 +4,7 @@ import {FacebookOutlined, GitHub, Instagram, LinkedIn} from '@mui/icons-material
 import {useDispatch,useSelector} from 'react-redux'
 import { selectedCategory } from '../feature/categorySlice'
 import { fetchCategory } from '../feature/categoryAction'
-
+import { Link } from 'react-router-dom'
 const Sidebar = () => {
   const dispatch = useDispatch()
   const {category,isFetching} = useSelector(selectedCategory)
@@ -26,7 +26,9 @@ const Sidebar = () => {
               {isFetching ? <span>Loading category</span> : (
                 <>
                  {category && category.map((item,i)=>
-                  <li className="sListItem" key={i}>{item.name}</li>
+                  <li className="sListItem" key={i}>
+                   <Link to={`/?category=${item.name}`}> {item.name} </Link>
+                    </li>
                  )}
                 </>
               )}

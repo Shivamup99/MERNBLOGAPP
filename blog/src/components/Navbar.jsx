@@ -2,13 +2,22 @@ import React,{useState} from 'react'
 import '../styles/navbar.scss'
 import { AcUnit, Home, LockOpen, Login, LogoutOutlined, NoteAlt, Phone, Search } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import { useDispatch ,useSelector } from 'react-redux';
+import { reset , logout } from '../feature/auth/authSlice';
 const Navbar = () => {
-    const user = true;
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const {user} = useSelector(state=>state.auth);
     const [isScrolled,setIsScrolled] = useState(false)
     window.onscroll=()=>{
     setIsScrolled(window.pageYOffset===0 ? false :true)
     return ()=>(window.onscroll=null)
+  }
+  const onLogout=()=>{
+      dispatch(logout())
+      dispatch(reset())
+      navigate('/')
   }
   return (
     <div className={isScrolled ? 'navbar scrroled':'navbar'}>
@@ -46,7 +55,7 @@ const Navbar = () => {
                     user &&
                     <>
                     <LogoutOutlined/>
-                    <span>Logout</span>
+                    <span onClick={onLogout}>Logout</span>
                     </>
                 }
             </div>
